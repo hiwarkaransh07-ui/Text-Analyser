@@ -1,29 +1,19 @@
-# Text-Analyser
- Analyze a paragraph and show word count, frequent words, and sentence length stats.
- from collections import Counter
-import string
 
-# take input
 text = input("Enter a paragraph:\n")
-
-# convert to lowercase
 text_lower = text.lower()
 
-# remove punctuation
 clean_text = ""
 for ch in text_lower:
     if ch not in string.punctuation:
         clean_text += ch
 
-# split words
 words = clean_text.split()
 word_count = len(words)
 
-# count word frequency
 freq = Counter(words)
 top_words = freq.most_common(5)
 
-# sentence length calculation
+
 sentences = text.replace("!", ".").replace("?", ".").split(".")
 sentence_lengths = []
 
